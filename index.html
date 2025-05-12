@@ -14,12 +14,12 @@
             transform: translateY(-2px);
         }
         .citation-type-btn.active {
-            background-color: #3b82f6;
+            background-color: #62ae50;
             color: white;
         }
         .citation-result {
             min-height: 100px;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #993133;
         }
         .tooltip {
             position: relative;
@@ -28,7 +28,7 @@
         .tooltip .tooltiptext {
             visibility: hidden;
             width: 200px;
-            background-color: #333;
+            background-color:#62ae50;
             color: #fff;
             text-align: center;
             border-radius: 6px;
@@ -68,24 +68,24 @@
             justify-content: center;
         }
         .mode-btn.active {
-            background-color: #3b82f6;
+            background-color:#62ae50;
             color: white;
         }
         .mode-btn:not(.active) {
             background-color: #e2e8f0;
-            color: #4b5563;
+            color: #62ae50;
         }
         .mode-btn:not(.active):hover {
             background-color: #cbd5e1;
         }
         .single-line-example {
             background-color: #f0f9ff;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #993133;
             padding: 0.75rem;
             margin-top: 0.5rem;
             border-radius: 0.25rem;
             font-size: 0.875rem;
-            color: #1e40af;
+            color: #993133;
         }
         .error-message {
             color: #dc2626;
@@ -100,7 +100,7 @@
             border: 1px solid #e2e8f0;
         }
         .feedback-toggle {
-            background-color: #3b82f6;
+            background-color: #993133;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 0.375rem;
@@ -112,7 +112,7 @@
             transition: all 0.3s ease;
         }
         .feedback-toggle:hover {
-            background-color: #2563eb;
+            background-color: #62ae50;
         }
         .feedback-toggle i {
             margin-right: 0.5rem;
@@ -125,16 +125,16 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-maroon-50">
     <div class="container mx-auto px-4 py-8 max-w-6xl">
         <header class="mb-8 text-center">
-            <h1 class="text-3xl font-bold text-blue-700 mb-2">Kabarak University Legal Citation Generator</h1>
+            <h1 class="text-3xl font-bold text-green-700 mb-2">Kabarak University Legal Citation Generator</h1>
             <p class="text-gray-600">Generate citations following the Kabarak University Legal Citation Guide (Primary Draft 02/02/2023)</p>
         </header>
 
         <!-- Mode Selector -->
         <div class="mode-selector">
-            <h2 class="text-lg font-semibold mb-3 text-blue-800">Select Input Mode</h2>
+            <h2 class="text-lg font-semibold mb-3 text-green-800">Select Input Mode</h2>
             <div class="flex flex-wrap gap-3">
                 <button id="single-line-mode" class="mode-btn active" onclick="setInputMode('single-line')">
                     <i class="fas fa-bolt mr-2"></i> Quick Single-Line
@@ -147,7 +147,7 @@
 
         <!-- Single-Line Input Container -->
         <div id="single-line-container" class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 class="text-xl font-semibold mb-4 text-blue-800">Quick Citation Entry</h2>
+            <h2 class="text-xl font-semibold mb-4 text-green-800">Quick Citation Entry</h2>
             <div class="mb-4">
                 <label for="single-line-input" class="block text-sm font-medium text-gray-700 mb-1">Enter source details in one line</label>
                 <input type="text" id="single-line-input" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe, The Future of AI, 2023, Penguin Books, 15, Nairobi">
@@ -173,7 +173,7 @@
                         <option value="internet">Internet Resource</option>
                     </select>
                 </div>
-                <button onclick="parseSingleLineInput()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center self-end">
+                <button onclick="parseSingleLineInput()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center self-end">
                     <i class="fas fa-magic mr-2"></i> Generate Citation
                 </button>
             </div>
@@ -181,7 +181,7 @@
 
         <!-- Interactive Mode Container -->
         <div id="interactive-container" class="bg-white rounded-lg shadow-md p-6 mb-8 hidden">
-            <h2 class="text-xl font-semibold mb-4 text-blue-800">Select Citation Type</h2>
+            <h2 class="text-xl font-semibold mb-4 text-green-800">Select Citation Type</h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-6 citation-types-grid">
                 <!-- Books -->
@@ -229,13 +229,13 @@
             <div id="form-container" class="mb-6">
                 <!-- Default message -->
                 <div id="default-message" class="text-center py-10 text-gray-500">
-                    <i class="fas fa-hand-pointer text-4xl mb-4 text-blue-500"></i>
+                    <i class="fas fa-hand-pointer text-4xl mb-4 text-green-500"></i>
                     <p>Please select a citation type from the options above</p>
                 </div>
 
                 <!-- Book Form (hidden by default) -->
                 <div id="book-form" class="hidden">
-                    <h3 class="text-lg font-medium mb-4 text-blue-700">Book Citation</h3>
+                    <h3 class="text-lg font-medium mb-4 text-green-700">Book Citation</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="book-author" class="block text-sm font-medium text-gray-700 mb-1">Author(s)</label>
@@ -265,7 +265,7 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <button onclick="generateBookCitation()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
+                        <button onclick="generateBookCitation()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
                             <i class="fas fa-magic mr-2"></i> Generate Citation
                         </button>
                     </div>
@@ -273,7 +273,7 @@
 
                 <!-- Journal Article Form (hidden by default) -->
                 <div id="journal-form" class="hidden">
-                    <h3 class="text-lg font-medium mb-4 text-blue-700">Journal Article Citation</h3>
+                    <h3 class="text-lg font-medium mb-4 text-green-700">Journal Article Citation</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="journal-author" class="block text-sm font-medium text-gray-700 mb-1">Author(s)</label>
@@ -303,7 +303,7 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <button onclick="generateJournalCitation()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
+                        <button onclick="generateJournalCitation()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
                             <i class="fas fa-magic mr-2"></i> Generate Citation
                         </button>
                     </div>
@@ -311,7 +311,7 @@
 
                 <!-- Legislation Form (hidden by default) -->
                 <div id="legislation-form" class="hidden">
-                    <h3 class="text-lg font-medium mb-4 text-blue-700">Legislation Citation</h3>
+                    <h3 class="text-lg font-medium mb-4 text-green-700">Legislation Citation</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="legislation-title" class="block text-sm font-medium text-gray-700 mb-1">Title of Legislation</label>
@@ -339,7 +339,7 @@
 
                 <!-- Case Law Form (hidden by default) -->
                 <div id="case-law-form" class="hidden">
-                    <h3 class="text-lg font-medium mb-4 text-blue-700">Case Law Citation</h3>
+                    <h3 class="text-lg font-medium mb-4 text-green-700">Case Law Citation</h3>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Case Type</label>
                         <div class="flex flex-wrap gap-3">
@@ -427,7 +427,7 @@
                     </div>
                                      
                     <div class="mt-4">
-                        <button onclick="generateCaseCitation()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
+                        <button onclick="generateCaseCitation()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
                             <i class="fas fa-magic mr-2"></i> Generate Citation
                         </button>
                     </div>
@@ -455,7 +455,7 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <button onclick="generateInternationalCitation()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
+                        <button onclick="generateInternationalCitation()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
                             <i class="fas fa-magic mr-2"></i> Generate Citation
                         </button>
                     </div>
@@ -463,7 +463,7 @@
 
                 <!-- Newspaper Form (hidden by default) -->
                 <div id="newspaper-form" class="hidden">
-                    <h3 class="text-lg font-medium mb-4 text-blue-700">Newspaper Citation</h3>
+                    <h3 class="text-lg font-medium mb-4 text-green-700">Newspaper Citation</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="news-author" class="block text-sm font-medium text-gray-700 mb-1">Author</label>
@@ -492,7 +492,7 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <button onclick="generateNewspaperCitation()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
+                        <button onclick="generateNewspaperCitation()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
                             <i class="fas fa-magic mr-2"></i> Generate Citation
                         </button>
                     </div>
@@ -500,7 +500,7 @@
 
                 <!-- Dissertation Form (hidden by default) -->
                 <div id="dissertation-form" class="hidden">
-                    <h3 class="text-lg font-medium mb-4 text-blue-700">Dissertation/Thesis Citation</h3>
+                    <h3 class="text-lg font-medium mb-4 text-green-700">Dissertation/Thesis Citation</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="diss-author" class="block text-sm font-medium text-gray-700 mb-1">Author</label>
@@ -534,7 +534,7 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <button onclick="generateDissertationCitation()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
+                        <button onclick="generateDissertationCitation()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
                             <i class="fas fa-magic mr-2"></i> Generate Citation
                         </button>
                     </div>
@@ -542,7 +542,7 @@
 
                 <!-- Internet Resources Form (hidden by default) -->
                 <div id="internet-form" class="hidden">
-                    <h3 class="text-lg font-medium mb-4 text-blue-700">Internet Resource Citation</h3>
+                    <h3 class="text-lg font-medium mb-4 text-green-700">Internet Resource Citation</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="web-author" class="block text-sm font-medium text-gray-700 mb-1">Author/Organization</label>
@@ -571,7 +571,7 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <button onclick="generateInternetCitation()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
+                        <button onclick="generateInternetCitation()" class="bg-green-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center">
                             <i class="fas fa-magic mr-2"></i> Generate Citation
                         </button>
                     </div>
@@ -582,7 +582,7 @@
         <!-- Result Container -->
         <div class="bg-gray-50 rounded-lg p-4 citation-result">
             <div class="flex justify-between items-center mb-2">
-                <h3 class="text-lg font-medium text-blue-700">Generated Citation</h3>
+                <h3 class="text-lg font-medium text-green-700">Generated Citation</h3>
                 <button id="copy-btn" onclick="copyCitation()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-3 rounded text-sm flex items-center">
                     <i class="fas fa-copy mr-1"></i> Copy
                 </button>
@@ -594,7 +594,7 @@
 
         <!-- Feedback Section -->
         <div class="feedback-section">
-            <h2 class="text-xl font-semibold mb-4 text-blue-800">Feedback & Support</h2>
+            <h2 class="text-xl font-semibold mb-4 text-green-800">Feedback & Support</h2>
             <p class="text-gray-600 mb-4">We value your feedback to improve this tool. Please let us know about your experience or report any issues.</p>
             
             <div id="feedback-toggle" class="feedback-toggle" onclick="toggleFeedbackForm()">
@@ -846,8 +846,8 @@
         function generateJournalCitation() {
             const author = document.getElementById('journal-author').value.trim();
             const title = document.getElementById('journal-title').value.trim();
-            const journalName = document.getElementById('journal-name').value.trim();
             const volume = document.getElementById('journal-volume').value.trim();
+            const journalName = document.getElementById('journal-name').value.trim();
             const year = document.getElementById('journal-year').value.trim();
             const page = document.getElementById('journal-page').value.trim();
                      
